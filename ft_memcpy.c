@@ -6,7 +6,7 @@
 /*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:45:49 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/07 16:54:51 by aherreri         ###   ########.fr       */
+/*   Updated: 2024/12/08 20:16:27 by aherreri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	ptr_dest = (char *)dest;
 	ptr_src = (char *)src;
+	if (!dest && !src)
+		return (0);
 	while (i < n)
 	{
 		ptr_dest[i] = ptr_src[i];
@@ -36,15 +38,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	void	*ptr;
 	size_t n = 6;
 
-	ptr = ft_memcpy(dest + 1, src, n);
+	ptr = ft_memcpy(((void*)0), ((void*)0), 3);
 	printf("%s", dest);
-	
-	int i = 0;
-	char *ptr_a = (char *)ptr;
-	while (i < 10)
-	{
-		printf("%c", *ptr_a);
-		ptr_a++;
-		i++;
-	}
 } */

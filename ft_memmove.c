@@ -6,7 +6,7 @@
 /*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 13:19:18 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/07 16:55:22 by aherreri         ###   ########.fr       */
+/*   Updated: 2024/12/09 12:34:23 by aherreri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,48 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
 	char	*ptr_dest;
 	char	*ptr_src;
-	char	*temp;
 
-	i = 0;
 	ptr_dest = (char *)dest;
 	ptr_src = (char *)src;
-	while (i < n)
+	if (!dest && !src)
+		return (0);
+	if (ptr_dest < ptr_src)
 	{
-		temp[i] = ptr_src[i];
-		i++;
+		while (n != 0)
+		{
+			n--;
+			*ptr_dest++ = *ptr_src++;
+		}
 	}
-	i = 0;
-	while (i < n)
+	else
 	{
-		ptr_dest[i] = temp[i];
-		i++;
+		while (n != 0)
+		{
+			n--;
+			ptr_dest[n] = ptr_src[n];
+		}
 	}
 	return (dest);
 }
 
 /* int	main(void)
 {
-	char	a[10] = "12345678";
-	//char	b[10] = "xao";
+	char	a[10] = "12345";
+	char	b[10] = "xeottt";
 	void	*ptr;
-	size_t n = 10;
+	size_t n = 6;
 
 	//printf("%s", a);
-	ptr = ft_memmove(a + 3, a, n);
+	ptr = ft_memmove(a, "ee", n);
 	printf("%s", a);
+	int i = 0;
+	char	*ptrr;
+	ptrr = (char *)ptr;
+	while (i < 10)
+	{
+		write(1, &a[i], 1);
+		i++;
+	}
 } */

@@ -6,7 +6,7 @@
 /*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 17:37:39 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/07 20:13:26 by aherreri         ###   ########.fr       */
+/*   Updated: 2024/12/09 17:56:34 by aherreri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,35 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
+	size_t	copy_dst;
 
 	i = 0;
 	j = 0;
+	copy_dst = ft_strlen(dst);
 	while (dst[i] != '\0')
-	{
 		i++;
-	}
-	while (j < size && i < sizeof(dst))
+	if (ft_strlen(dst) >= size)
+		return (size + ft_strlen(src));
+	if (size <= 0)
+		return (ft_strlen(src));
+	while (i < (size - 1) && src[j] != '\0')
 	{
 		dst[i] = src[j];
 		i++;
 		j++;
 	}
-	dst[i] = 0;
-	return (ft_strlen(src) + ft_strlen(dst));
+	dst[i] = '\0';
+	return (ft_strlen(src) + copy_dst);
 }
 
-int	main(void)
+/* int	main(void)
 {
-	char	dest[10] = "0123456789";
-	char	src[5] = "sajd";
-	size_t 	size = 4;
-	size_t	ret_dst;
+	char	dest[0] = "\0";
+	char	dest[10] = "a";
+	size_t 	size = 1;
 
-	ret_dst = ft_strlcat(dest, src, size);
-	printf("%s", dest);
-}
+	size_t	hola = ft_strlcat(dest, "lorem ipsum", 15);
+	printf("%zu", hola);
+	printf("\n");
+	write(1, dest, 15);
+} */

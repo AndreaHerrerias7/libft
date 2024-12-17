@@ -6,7 +6,7 @@
 /*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 13:12:50 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/07 17:19:53 by aherreri         ###   ########.fr       */
+/*   Updated: 2024/12/09 16:40:42 by aherreri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ size_t	ft_strlen(const char *s)
 
 /* int main(void)
 {
-    size_t a = ft_strlen("hola");
-    printf("%i", a);
+    size_t a = ft_strlen('a');
+    printf("%zu", a);
 } */

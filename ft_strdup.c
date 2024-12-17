@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 17:00:05 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/09 15:13:39 by aherreri         ###   ########.fr       */
+/*   Created: 2024/12/08 12:40:09 by aherreri          #+#    #+#             */
+/*   Updated: 2024/12/10 16:36:55 by aherreri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strdup(const char *s)
 {
+	char	*str;
 	size_t	i;
 
+	str = malloc (ft_strlen(s) * sizeof(char) + 1);
+	if (!str)
+		return (NULL);
 	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (i < (size - 1) && src[i])
+	while (s[i] != '\0')
 	{
-		dst[i] = src[i];
+		str[i] = s[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
+	str[i] = '\0';
+	return (str);
 }
 
 /* int	main(void)
 {
-	char	dest[10] = "eeee";
-	char	src[5] = "miau";
-	size_t 	size = 5;
-	size_t	ret_dst;
+	const char	s[50] = "lorem ipsum dolor sit amet";
 
-	ret_dst = ft_strlcpy(dest, "BBBB", 10);
-	printf("%s", dest);
+	char	*ptr_str = ft_strdup(s);
+	printf("%s", ptr_str);
+	free(ptr_str);
 } */

@@ -6,13 +6,13 @@
 /*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 18:09:15 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/07 18:35:00 by aherreri         ###   ########.fr       */
+/*   Updated: 2024/12/08 17:12:24 by aherreri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 		c = c - 97 + 65;
@@ -21,6 +21,6 @@ int	toupper(int c)
 
 /* int	main(void)
 {
-	int a = toupper(97);
+	int a = ft_toupper(97);
 	printf("%i", a);
 } */

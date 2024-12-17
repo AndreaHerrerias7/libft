@@ -6,7 +6,7 @@
 /*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 18:58:44 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/07 19:26:25 by aherreri         ###   ########.fr       */
+/*   Updated: 2024/12/10 16:35:23 by aherreri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	c_conv;
-	const char	*s_conv;
-	size_t	i;
+	const char		*s_conv;
+	size_t			i;
 
-	c_conv = (unsigned char)c;
 	s_conv = s;
 	i = 0;
-	while(i != n)
+	while (i != n)
 	{
-		if (*s_conv == c_conv)
+		if ((unsigned char)*s_conv == (unsigned char)c)
 			return ((void *)s_conv);
 		i++;
 		s_conv++;
@@ -35,7 +33,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const char	str[10] = "Hloa";
 	char	*res;
+	int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
 
-	res = ft_memchr(str, 'o', 3);
-	printf("%s", res);
+	res = ft_memchr(tab, -1, 7);
+	//printf("%s", res);
 } */
