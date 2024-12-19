@@ -6,7 +6,7 @@
 /*   By: aherreri <aherreri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:00:29 by aherreri          #+#    #+#             */
-/*   Updated: 2024/12/17 15:36:16 by aherreri         ###   ########.fr       */
+/*   Updated: 2024/12/19 20:23:34 by aherreri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,33 @@ char	**ft_split(char const *s, char c)
 
 /* int	main(void)
 {
-	char	**str = ft_split("lorem ipsum douspendisse", ' ');
+	char	**str = ft_split("lorem  ipsum douspendisse", ' ');
 	printf("%s\n", str[0]);
 	printf("%s\n", str[1]);
 	printf("%s\n", str[2]);
 	printf("%s\n", str[3]);
 	printf("%s\n", str[11]);
 } */
+
+int main(void)
+{
+	int		i;
+	int 	counter;
+	char	str[60] = ",,, hey, what's up,,";
+	char	c = ',';
+	char 	**res = ft_split(str, c);
+	
+	i = 0;
+	counter = 0;
+	while(str[i] != '\0')
+	{
+		if (str[0] != c || str[i] != c && str[i-1] == c)
+			counter++;
+		i++;
+	}
+	i = 0;
+	printf("%i \n", counter);
+	while (counter--)
+		printf("%s \n", res[i++]);
+	
+}
